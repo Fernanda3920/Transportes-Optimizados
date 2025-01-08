@@ -1,0 +1,46 @@
+.weather-bar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #7db7e4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000; 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.weather-bar.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+}
+
+.weather-icon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.weather-temperature {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.weather-description {
+  font-size: 1rem;
+  color: #666;
+  flex-grow: 1; 
+}
+
+.close-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+}

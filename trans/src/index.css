@@ -1,0 +1,203 @@
+.app-container {
+  display: flex;  
+  height: 100vh;   /* Ocupa todo el height */
+  flex-direction: row;  /* Junto con el display, hace que la aplicacion tenga una alineacion horizontal, colocandose el panel izquierdo al lado del derecho */
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+.content-absolute {
+  position: absolute;
+}
+
+.left-panel {
+  width: 28%; 
+  background-color: #f8f9fa;
+  padding: 15px;
+  transition: width 0.3s; 
+  overflow-y: auto;
+  flex: 0 1 28%; /* Asegura que el panel izquierdo no se expanda más allá del ancho deseado */
+}
+
+.navbar {
+  background-color: transparent !important;
+}
+
+.list-group-item  {
+  list-style-type: none !important;
+}
+
+.left-panel .icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.left-panel.collapsed {
+  width: 80px; 
+}
+
+.flickr-images-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.flickr-images {
+  display: flex;
+  gap: 10px;
+}
+
+.flickr-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.no-images-message {
+  margin-top: 10px;
+  color: #999;
+}
+
+.left-panel.collapsed .form-group {
+  display: none;
+}
+
+.left-panel.collapsed {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.left-panel.collapsed .form-group {
+  display: none;
+}
+
+.left-panel.collapsed .title {
+  display: none;
+}
+
+.left-panel.collapsed .current-location {
+  display: none;
+}  
+
+.left-panel .collapse-button {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.right-panel {
+  flex: 1;
+  background-color: #fff;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.suggestions-list {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  width: 100%;
+}
+
+.suggestions-list .list-group-item {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.suggestions-list .list-group-item:hover {
+  background-color: #f1f1f1;
+}
+
+.form-group {
+  position: relative;
+}
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.form-group-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group-inner-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+}
+
+.input-destination {
+  flex: 1; 
+}
+
+.input-vehicle, .btn-search {
+  flex: 0 0 120px;
+}
+
+.btn-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control {
+  width: 100%; 
+  max-width: 300px; 
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1280px) {
+  .app-container {
+    flex-direction: column; /* Cambia la dirección del flujo de flex a columna en pantallas pequeñas */
+  }
+
+  .right-panel {
+    width: 100%;
+    height: calc(100vh - 230px); /* Ajusta la altura del mapa teniendo en cuenta la altura del panel izquierdo */
+    order: 1;
+    overflow: hidden;
+    z-index: 1; /* Asegura que el mapa esté debajo del panel izquierdo */
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 230px; /* Ajusta la altura del panel izquierdo según tus necesidades */
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    order: 2;
+    flex: 0 1 auto; /* Permite que el panel se ajuste automáticamente en pantallas pequeñas */
+    z-index: 2; /* Asegura que el panel izquierdo esté encima del mapa */
+  }
+
+  .custom-navbar {
+    display: block;
+    position: relative;
+    margin-top: 15px;
+    z-index: 3; /* Asegura que el navbar esté encima del mapa */
+  }
+
+  .form-control {
+    width: 100%;
+    max-width: none;
+  }
+
+  .transport-select .mt-3 {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+}

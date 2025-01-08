@@ -1,0 +1,25 @@
+.search-bar .input-group {
+    position: relative;
+  }
+  
+  .search-bar .suggestions-list {
+    position: absolute;
+    top: 100%; /* Justo debajo del input */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px; /* Opcional: altura máxima para permitir el desplazamiento */
+    overflow-y: auto; /* Opcional: añadir desplazamiento si es necesario */
+  }
+  
+  .search-bar .suggestions-list .list-group-item {
+    cursor: pointer;
+  }
+  
+  .search-bar .suggestions-list .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
